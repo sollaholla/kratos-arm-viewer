@@ -35,6 +35,9 @@ header { grid-column: 1 / -1; display: flex; align-items: center; gap: 14px; pad
 .seg button:hover { color: var(--text); }
 .seg button[aria-pressed="true"] { background: rgba(255,255,255,.1); color: var(--text); }
 
+/* Elements below set their own display, which would otherwise beat the
+   hidden attribute and leave an invisible overlay catching the pointer. */
+[hidden] { display: none !important; }
 #viewport { grid-column: 2; grid-row: 2; position: relative; overflow: hidden; background: radial-gradient(120% 90% at 50% 25%, #252b36 0%, #151920 55%, #0d0f13 100%); touch-action: none; }
 #viewport canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; display: block; outline: none; }
 #labels { position: absolute; inset: 0; pointer-events: none; }
